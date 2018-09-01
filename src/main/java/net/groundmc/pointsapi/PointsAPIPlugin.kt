@@ -59,7 +59,7 @@ class PointsAPIPlugin : JavaPlugin() {
                             "get" -> sender.sendMessage("Points of $args[1]: ${PointsAPI.getPoints(player)}")
                         }
                     } else if (args.size == 3) {
-                        val points = args[2].toInt()
+                        val points = args[2].toLong()
                         when (args[0]) {
                             "add" -> PointsAPI.addPoints(player, points)
                             "remove" -> PointsAPI.removePoints(player, points)
