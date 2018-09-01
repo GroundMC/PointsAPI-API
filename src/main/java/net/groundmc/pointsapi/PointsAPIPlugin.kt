@@ -87,7 +87,7 @@ class PointsAPIPlugin : JavaPlugin() {
 
 object PointsTable : Table("Points") {
     private val id = uuid("player").primaryKey()
-    private val points = long("points")
+    private val points = long("points").index()
 
     fun addPoints(uuid: UUID, p: Long) = setPoints(uuid, getPoints(uuid) + p)
 
