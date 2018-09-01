@@ -1,0 +1,16 @@
+name: GroundMCPointsAPI
+version: ${env.GIT_COMMIT}
+author: GiantTree
+main: net.groundmc.statsdb.StatsDB
+depend: [GroundMCKotlinLoader]
+
+commands:
+  pa:
+    description: PointsAPI
+    permission: pointsapi.admin
+    usage: /<command> <get|add|remove|set> <name> [amount]
+
+permissions:
+  pointsapi.admin:
+    description: Grants administrative access to this plugin
+    default: op
