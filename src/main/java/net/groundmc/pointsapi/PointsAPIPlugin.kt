@@ -56,7 +56,7 @@ class PointsAPIPlugin : JavaPlugin() {
                     )
                     if (args.size == 2) {
                         when (args[0]) {
-                            "get" -> sender.sendMessage("Points of $args[1]: ${PointsAPI.getPoints(player)}")
+                            "get" -> sender.sendMessage("Points of ${player.name}: ${PointsAPI.getPoints(player)}")
                         }
                     } else if (args.size == 3) {
                         val points = args[2].toLong()
@@ -75,7 +75,7 @@ class PointsAPIPlugin : JavaPlugin() {
         override fun onTabComplete(sender: CommandSender, command: Command?, alias: String?, args: Array<out String>?): List<String> {
             if (args != null && args.isNotEmpty()) {
                 when (args.size) {
-                    1 -> return listOf("get", "add", "remove", "set").filter { it.startsWith(args[0]) }
+                    0, 1 -> return listOf("get", "add", "remove", "set").filter { it.startsWith(args[0]) }
                     2 -> return Bukkit.matchPlayer(args[0]).map(Player::getName)
                 }
             }
