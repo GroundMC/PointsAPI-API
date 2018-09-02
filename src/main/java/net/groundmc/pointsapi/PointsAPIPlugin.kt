@@ -65,7 +65,7 @@ class PointsAPIPlugin : JavaPlugin() {
                             "remove" -> PointsAPI.removePoints(player, points)
                             "set" -> PointsAPI.setPoints(player, points)
                         }
-                        sender.sendMessage("Points of $args[1]: ${PointsAPI.getPoints(player)}")
+                        sender.sendMessage("Points of ${args[1]}: ${PointsAPI.getPoints(player)}")
                     }
                 }
             }
@@ -75,8 +75,8 @@ class PointsAPIPlugin : JavaPlugin() {
         override fun onTabComplete(sender: CommandSender, command: Command?, alias: String?, args: Array<out String>?): List<String> {
             if (args != null && args.isNotEmpty()) {
                 when (args.size) {
-                    1 -> return listOf("get", "add", "remove", "set")
-                    2 -> return Bukkit.matchPlayer(args[1]).map(Player::getName)
+                    0 -> return listOf("get", "add", "remove", "set")
+                    1 -> return Bukkit.matchPlayer(args[1]).map(Player::getName)
                 }
             }
             return emptyList()
