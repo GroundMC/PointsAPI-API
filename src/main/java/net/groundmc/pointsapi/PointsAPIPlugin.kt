@@ -75,8 +75,8 @@ class PointsAPIPlugin : JavaPlugin() {
         override fun onTabComplete(sender: CommandSender, command: Command?, alias: String?, args: Array<out String>?): List<String> {
             if (args != null && args.isNotEmpty()) {
                 when (args.size) {
-                    0 -> return listOf("get", "add", "remove", "set")
-                    1 -> return Bukkit.matchPlayer(args[1]).map(Player::getName)
+                    1 -> return listOf("get", "add", "remove", "set").filter { it.startsWith(args[0]) }
+                    2 -> return Bukkit.matchPlayer(args[0]).map(Player::getName)
                 }
             }
             return emptyList()
