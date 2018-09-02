@@ -1,7 +1,7 @@
-name: GroundMCPointsAPI
+name: PointsAPI
 version: ${env.GIT_COMMIT}
 author: GiantTree
-main: net.groundmc.statsdb.StatsDB
+main: net.groundmc.pointsapi.PointsAPIPlugin
 depend: [GroundMCKotlinLoader]
 
 commands:
