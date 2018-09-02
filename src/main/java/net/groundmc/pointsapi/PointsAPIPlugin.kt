@@ -65,7 +65,7 @@ class PointsAPIPlugin : JavaPlugin() {
                             "remove" -> PointsAPI.removePoints(player, points)
                             "set" -> PointsAPI.setPoints(player, points)
                         }
-                        sender.sendMessage("Points of ${args[1]}: ${PointsAPI.getPoints(player)}")
+                        sender.sendMessage("Points of ${player.name}: ${PointsAPI.getPoints(player)}")
                     }
                 }
             }
