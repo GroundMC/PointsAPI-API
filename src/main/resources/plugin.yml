@@ -1,14 +1,13 @@
 name: PointsAPI
-version: ${env.GIT_COMMIT}
+version: 1.6.7
 author: GiantTree
 main: net.groundmc.pointsapi.PointsAPIPlugin
-depend: [GroundMCKotlinLoader]
 
 commands:
   pa:
     description: PointsAPI
     permission: pointsapi.admin
-    usage: /<command> <get|add|remove|set> <name> [amount]
+    usage: /<command> <get|add|remove|set> <name|uuid> [amount]
 
 permissions:
   pointsapi.admin:

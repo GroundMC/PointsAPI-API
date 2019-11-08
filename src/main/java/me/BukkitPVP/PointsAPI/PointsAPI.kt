@@ -5,32 +5,35 @@ import org.bukkit.OfflinePlayer
 import org.bukkit.entity.Player
 
 object PointsAPI {
+
+    lateinit var pointsTable: PointsTable
+
     fun addPoints(offlinePlayer: OfflinePlayer, points: Long) {
-        PointsTable.addPoints(offlinePlayer.uniqueId, points)
+        pointsTable.addPoints(offlinePlayer.uniqueId, points)
     }
 
     fun removePoints(player: Player, points: Long) {
-        PointsTable.removePoints(player.uniqueId, points)
+        pointsTable.removePoints(player.uniqueId, points)
     }
 
     fun removePoints(offlinePlayer: OfflinePlayer, points: Long) {
-        PointsTable.removePoints(offlinePlayer.uniqueId, points)
+        pointsTable.removePoints(offlinePlayer.uniqueId, points)
     }
 
     fun setPoints(player: Player, points: Long) {
-        PointsTable.setPoints(player.uniqueId, points)
+        pointsTable.setPoints(player.uniqueId, points)
     }
 
     fun setPoints(offlinePlayer: OfflinePlayer, points: Long) {
-        PointsTable.setPoints(offlinePlayer.uniqueId, points)
+        pointsTable.setPoints(offlinePlayer.uniqueId, points)
     }
 
     fun getPoints(player: Player): Long {
-        return PointsTable.getPoints(player.uniqueId)
+        return pointsTable.getPoints(player.uniqueId)
     }
 
     fun getPoints(offlinePlayer: OfflinePlayer): Long {
-        return PointsTable.getPoints(offlinePlayer.uniqueId)
+        return pointsTable.getPoints(offlinePlayer.uniqueId)
     }
 
 }
